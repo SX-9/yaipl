@@ -1,0 +1,122 @@
+# this is example syntax of the programming language im building
+
+def array *str # if the type starts with an asterisk then its a list of types
+def changeLater str # keys for variables can only have letters and numbers and nothing else and cant start with a number
+def number int 69 # if var name starts with ! its a constant and the
+def !text str "hello world" # numbers and strings are the only types that can be defined directly
+
+# variables cant have names of statements
+# the types in this language are lists of types, numbers, bool, and strings
+# any value thats a list or dict needs to have a definition like bellow and cant be directly in the var def
+
+list array # start of defining items for the list
+val "hello" # list items are defined with val
+val "world" # if its not the type of the list it will throw an error
+end list # end of defining items for the list
+
+pop array # removes last element from array
+push array "hi 2" # adds array item at the end
+shift array # removes first element from array
+unshift array "world 2" adds array item at the beginning
+
+constant array # to turn any var into a constant we use this statement but its irreversible
+constant object # constants cant be changed or deleted and will throw an error if you try
+
+set changeLater "hello" # set is used to change the value of a variable only if its not a constant
+
+del changeLater # delete unused variables with del
+# del can delete multiple variables at once
+
+out "hi from the language" # out is used to print to the console
+out text # out statements can only print strings and numbers
+
+def res str
+in "sup?" res # in is used to get input from the user and store it in a variable
+# the first argument is the text to display to the user
+# the second argument is the variable to store the input in
+out "you said " res
+
+def condition bool
+cmp number == 100 conditional # cmp is used to compare values
+# the first and third arguments are the values to compare
+# the fourth argument is the variable to store the result in
+# the fourth argument cant be a constant and needs to be a bool
+# the second argument is the condition to compare the values with
+# the second argument can be operator ==, !=, >, <, >=, <=
+# if the second argument is invalid it will throw an error
+
+if condition # if statements are used to run code if a condition is true
+out "condition is true"
+else # else statements are used to run code if a condition is false
+out "condition is false"
+
+while condition # while statements are used to run code while a condition is true
+out "condition is true"
+alter number 1 # alter is used to add the first argument to the second argument and store in the first argument
+def condition2 bool
+cmp number == 70 condition2
+if condition2
+break # break statements are used to stop a loop
+else
+continue # continue statements are used to skip the rest of the loop and start the next iteration
+end if
+# if the first argument of alter is a constant or not a variable it will throw an error
+end while # end while statements with end while
+del condition condition2 # del can delete multiple variables at once
+
+# continue and break statements can only be used in for loops
+for item array
+out item # for statements are used to run code for each item in a list
+end for # end for statements with end for
+del array
+
+switch number # switch statements are used to run code based on a value
+case 1 # case statements are used to check if a value is equal to a value
+out "number is 1" # if the value is equal to the value in the case statement it will run the code
+case 2
+out "number is 2"
+default # default statements are used to run code if no case statements are true
+out "number is not 1 or 2"
+end switch # end switch statements with end switch
+
+function doStuff none # functions are used to run code multiple times
+# functions cant be the name of statements
+# the first argument is the name of the function and the second is the return type
+# the return type can be any type or none
+args 2 # argument definitions starts here
+# the first argument is the number of arguments the function needs at minimum
+def number1 int
+def number2 int
+def everythingElse *str # the last argument can be a list of types
+# if the minimum number of arguments is met then the function will run with everythingElse being an empty list
+end args # argument definitions end here
+# all arguments are constants and cant be changed
+def condition bool
+cmp number1 > number2 condition
+if condition
+out "number1 is greater than number2"
+ret 1 # ret is used to return a value from a function
+else
+out "number1 is less than number2"
+ret 0
+end if
+end function # end function statements with end function
+
+# to call a function we use the call statement
+call doStuff 1 2 "hello" "world" # the first argument is the name of the function
+# the rest of the arguments are the arguments for the function
+# importing functions from other files can be done with the import statement
+
+try errorCode doStuff 1 2 "hello" "world" # try statements are used to run code that might throw an error
+# if it errors the code below is ran and the error is stored in the variable below
+# if it doesn't error it will skip the code below until the end statement
+# first argument is to store the error code (int) and the second argument is the code to run
+out errorCode
+end try # end try statements
+
+import "file.txt" someFunc # import statements are used to import functions from other files
+# if the file doesn't exist it will throw an error
+# the rest of the arguments are the names of the functions or variables to import if left blank it will import all functions (not recommended)
+
+# to  export functions to other files we use the export statement
+export doStuff text # export statements are used to export functions to other files

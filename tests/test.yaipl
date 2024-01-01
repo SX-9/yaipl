@@ -1,0 +1,22 @@
+# def varName type value
+# def !constant *arrayOfTypes
+
+# these should not get an error
+
+def var1 str
+def var2 str "hello world"
+def var3 int 69
+def !var4 str "hello grr"
+def !var5 int 70
+def var6 *int
+
+# these should get an error
+
+#def invalid_name str "hello world"
+#def !var unknown_type "hello grr"
+#def !constantArray *str
+#def !emptyConstant str
+#def array *str "immediate value"
+#def bool bool "immediate value"
+#def miss int "type value mismatch"
+
